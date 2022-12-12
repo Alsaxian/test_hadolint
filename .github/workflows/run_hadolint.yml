@@ -1,4 +1,4 @@
-name: Lint Dockerfile
+name: hadolint action test
 
 on:
   push:
