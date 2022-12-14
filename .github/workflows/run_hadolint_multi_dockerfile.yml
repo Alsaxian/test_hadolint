@@ -17,13 +17,9 @@ jobs:
         with:
           dockerfile: Dockerfile*
           recursive: true
-          format: tty
-          # output-file: hadolint-result.sarif
+          format: sarif
+          output-file: hadolint-result.sarif
           # no-fail: true
-    # - uses: actions/upload-artifact@v2
-    #   with:
-    #     name: lint-results
-    #     path: .
       - name: Upload result to Github Security
         uses: github/codeql-action/upload-sarif@v2
         with:
