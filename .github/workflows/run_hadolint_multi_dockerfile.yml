@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: hadolint/hadolint-action@v2.1.0
       with:
-        args: Dockerfile
+        dockerfile: Dockerfile1
     - uses: actions/upload-artifact@v2
       with:
         name: lint-results

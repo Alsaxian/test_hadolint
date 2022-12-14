@@ -1,13 +1,8 @@
-FROM python
-MAINTAINER johndoe@gmail.com
-LABEL org.website="containiq.com"
- 
-RUN mkdir app && cd app
- 
-COPY requirements.txt ./
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
- 
-COPY . .
- 
-CMD python manage.py runserver 0.0.0.0:80000
+# Start from the latest Ubuntu image
+FROM ubuntu:latest
+
+# Install the cowsay package from apt
+RUN apt-get update && apt-get install -y cowsay
+
+# Run the cowsay command when the image is run
+CMD ["cowsay", "Hello, world!"]
