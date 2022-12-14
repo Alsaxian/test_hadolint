@@ -1,6 +1,6 @@
 name: test trivy action
 on:
-  push:
+  # push:
   pull_request:
   workflow_dispatch:
 jobs:

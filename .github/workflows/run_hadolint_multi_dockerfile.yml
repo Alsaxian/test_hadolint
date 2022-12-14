@@ -1,7 +1,7 @@
-name: hadolint action test
+name: hadolint multi file
 
 on:
-  # push:
+  push:
   workflow_dispatch:
 
 jobs:
