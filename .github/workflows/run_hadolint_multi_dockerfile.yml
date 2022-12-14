@@ -18,7 +18,7 @@ jobs:
           dockerfile: Dockerfile*
           recursive: true
           format: sarif
-          output-file: hadolint-result.sarif
+          # output-file: hadolint-result.sarif
           # no-fail: true
     # - uses: actions/upload-artifact@v2
     #   with:
