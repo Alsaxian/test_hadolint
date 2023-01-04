@@ -13,5 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: lint
-        run:
+        run: |
+          shopt -s globstar
           hadolint **/Dockerfile*
