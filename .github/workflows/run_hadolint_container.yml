@@ -6,9 +6,9 @@ jobs:
   hadolint:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/hadolint/hadolint
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
+      image: ghcr.io/hadolint/hadolint:v2.12.0-debian
+      # volumes:
+      #   - /var/run/docker.sock:/var/run/docker.sock
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
