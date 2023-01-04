@@ -7,8 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/hadolint/hadolint
-
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: lint
         run:
           hadolint Dockerfile
