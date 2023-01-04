@@ -14,5 +14,6 @@ jobs:
         uses: actions/checkout@v3
       - name: lint
         run: |
+          echo $bash --version 
           shopt -s globstar
           hadolint **/Dockerfile*
