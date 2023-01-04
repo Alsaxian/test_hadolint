@@ -15,4 +15,4 @@ jobs:
       - name: lint
         run: |
           bash -c "shopt -s globstar"
-          hadolint $(find / -name "Dockerfile*")
+          run: find . -name "Dockerfile*" -exec hadolint {} +
