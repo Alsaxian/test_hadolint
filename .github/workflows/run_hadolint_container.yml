@@ -18,4 +18,4 @@ jobs:
           bash -c 'shopt -s globstar
           hadolint **/Dockerfile*'
           # find . -name "Dockerfile*" -exec hadolint {} +
-          
+            
