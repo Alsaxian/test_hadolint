@@ -6,7 +6,7 @@ jobs:
   hadolint:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/hadolint/hadolint:v2.12.0-debian
+      image: ghcr.io/hadolint/hadolint:latest-debian
       # volumes:
       #   - /var/run/docker.sock:/var/run/docker.sock
     steps:
@@ -14,5 +14,5 @@ jobs:
         uses: actions/checkout@v3
       - name: lint
         run: |
-          bash -c "shopt -s globstar"
+          # bash -c "shopt -s globstar"
           find . -name "Dockerfile*" -exec hadolint {} +

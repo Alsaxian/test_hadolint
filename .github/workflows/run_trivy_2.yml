@@ -1,0 +1,23 @@
+name: trivy test
+
+on:
+  [push, pull_request, workflow_dispatch]
+
+jobs:
+  trivy-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build docker image 
+        run: |
+          docker build -t redis:trivy-test ./dockerfile_redis/
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: redis:trivy-test
+          exit-code: 0
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          format: table
+          severity: 'CRITICAL,HIGH'

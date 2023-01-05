@@ -1,0 +1,19 @@
+# Using the Ubuntu image (our OS)
+FROM ubuntu:latest
+# Update package manager (apt-get) 
+# and install (with the yes flag `-y`)
+# Python and Pip
+# RUN apt update && apt install software-properties-common -y && add-apt-repository ppa:deadsnakes/ppa -y && apt update && \
+#     apt install -y python3.8 python3-pip
+RUN add-apt-repository ppa:deadsnakes/ppa && aptupdate && apt install -y python3.11 python3-pip
+
+WORKDIR /dockerfile_python/
+
+# Install our Python dependencies
+RUN pip install requirements.txt
+
+# Copy our script into the container
+# COPY script.py /script.py
+
+# Run the script when the image is run
+ENTRYPOINT ["python3", "/script.py"]
