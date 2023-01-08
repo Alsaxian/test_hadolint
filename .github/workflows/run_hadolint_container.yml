@@ -15,7 +15,7 @@ jobs:
       - name: lint
         run: |
 
-          bash -c 'shopt -s globstar
-          hadolint **/Dockerfile*'
-          # find . -name "Dockerfile*" -exec hadolint {} +
+          bash -c 'shopt -s globstar 
+          hadolint **/Dockerfile*' # This works. Pay attention to the newline in a single quoted string.
+          # find . -name "Dockerfile*" -exec hadolint {} + # This works too, just the directories of each Dockerfile in the result list will be ./Dockerfile, a bit complicated.
             
