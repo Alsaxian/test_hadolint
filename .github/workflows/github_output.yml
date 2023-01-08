@@ -12,6 +12,6 @@ jobs:
           echo str="Let's output it!" | tee $GITHUB_OUTPUT
       - name: get it again
         run:
-          echo {{ steps.output_str.outputs.str }}
+          echo ${{ steps.output_str.outputs.str }}
 
 
